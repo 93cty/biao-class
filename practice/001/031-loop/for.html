@@ -1,0 +1,118 @@
+<script>
+    // var personList = [
+    //     'whh',
+    //     'lsd',
+    //     'zks',
+    //     'lgd',
+    //     'whh',
+    //     'lsd',
+    //     'zks',
+    //     'lgd',
+    //     'lsd',
+    //     'zks',
+    //     'lgd',
+    // ];
+    // for (var i = 0; i < personList.length; i++) {
+    //     var person = personList[i];
+    //     console.log(person);
+    // }
+    // =========================================================
+    // var num = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+    // var num0 = 0;
+    // for (var i = 0; i < num.length; i++) {
+    //     var num0 = num0 + num[i];
+    //     console.log(num0); //计算num[i]与它之前所有数字的和并打印一次
+    // }
+    // console.log(num0); //计算数组num里数字之和
+    // =========================================================
+
+    // var numList = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+    // for (var i = 0; i < numList.length; i++) {
+    //     if (numList[i] > 4) {
+    //         console.log(numList[i]);
+    //     }
+    //     //----------打印大于4小于等于9的数字-------------//
+    //     if (numList[i] <= 4) {
+    //         continue
+    //     };// continue指放弃当前循环
+    //     if (numList[i] >= 9) {
+    //         continue
+    //     };
+    //     console.log(numList[i]);
+    // }
+    // for (var i = 0; i < numList.length; i++) {
+    //     if (numList[i] == 3) {
+    //         break;//结束循环，下面的不执行
+    //     }
+    // }
+    // console.log('坏人，放款失败');
+// =========================================================
+
+    // var numList = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+    // for (var i = 0; i < numList.length; i++) {
+    //     if (numList[i] % 2 != 0) {
+    //         console.log('奇数：', numList[i]);
+    //     } else {
+    //         console.log('偶数：', numList[i])
+    //     }
+    // }
+
+// var numList = [
+//   [1, 11, 111],
+//   [2, 22, 222],
+//   [3, 33, 333],
+//   [4, 44, 444],
+// ];
+// for( var i =0;i<numList.length;i++) {
+//     //拿到当前迭代第一级元素即二级数组
+//     var list = numList[i];
+//     //进入二级数组
+//     for( var j=0;j<list.length;j++) {
+//         //拿到二级数组里的元素即每个数字
+//         var num =list[j];
+//         console.log(num);
+//     }
+// }
+// // for(var i=0;i<numList.length;i++) {
+// //     for(var j=0;j<numList[i].length;j++){
+// //         console.log(numList[i][j]);
+// //     }
+// // }
+
+var numList = [
+    [ // 1排
+      [1, 11, 111], // 1班
+      [2, 22, 222], // 2班
+      [3, 33, 333], // 3班
+      [4, 44, 444], // 4班
+    ],
+    [ // 2排
+      [1, 11, 111], // 1班
+      [2, 22, 222], // 2班
+      [3, 33, 333], // 3班
+      [4, 44, 444], // 4班
+    ],
+  ];
+
+  forI: for (var i = 0; i < numList.length; i++) {
+    /*拿到当前迭代的第一级的元素（也就是二级数组）*/
+    var list = numList[i];
+
+    /*进入二级数组*/
+    forJ: for (var j = 0; j < list.length; j++) {
+      /*拿到数组中的元素（也就是数字）*/
+      var listJ = list[j];
+
+      forK: for (var k = 0; k < listJ.length; k++) {
+        var num = listJ[k];
+        if (num == 3) {
+          console.log('没必要检查下去了，我们中出了一个叛徒')
+          break forJ;
+        }
+        console.log(num);
+      }
+    }
+  }
+
+
+</script>

@@ -1,0 +1,60 @@
+<script>
+    ; (function () {
+        'use strict';
+        // var arr = [2, 4, 6, 8, 10, 11, 21];
+        function arraySum(arr) { // 2 定义函数结构// 3 实现函数体
+            var sum = 0;// 一开始我们不知道和是多少，所以默认为0
+            for (var i = 0; i < arr.length; i++) {// 迭代传进来的数组arr
+                sum = sum + arr[i];// 将每一项相加
+            }
+            console.log(sum)// 打印他们的和
+        }
+        var arr = [2, 4, 6, 8, 10, 11, 21];//举个栗子，变量名无所谓
+        arraySum(arr);//调用函数，只要（）内变量名和声明的时候一样
+
+        //----------------------------------------------------
+
+        function arrayJoin(arr) {
+            var sum = '';
+            for (var i = 0; i < arr.length; i++) {
+                sum = sum + arr[i];
+            }
+            console.log(sum);
+        }
+        var arr = ['y', 'o', 'o', 'o'];
+        arrayJoin(arr);
+
+        //----------------------------------------------------
+
+        function search(keyWord) {
+            var arr = [
+                {
+                    name: '王花花',
+                    playing: ['CS', '红警'],
+                },
+                {
+                    name: '李拴蛋',
+                    playing: ['守望屁股', '吃鸡', 'CS'],
+                },
+                {
+                    name: '牛备备',
+                    playing: ['红警', '吃鸡'],
+                },
+            ];
+            var result = [];
+            for (var i = 0; i < arr.length; i++) {
+                var item = arr[i];
+                var player = item.playing;
+                if (player.indexOf(keyWord) != -1) {
+                    result.push(item.name);
+                }
+            }
+            console.log(result);
+        }
+        search('CS');
+        // search('吃鸡');
+        // search('红警');
+        // search('守望屁股');
+
+    })();
+</script>

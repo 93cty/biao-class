@@ -1,0 +1,48 @@
+<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+<input type="text" id="name" placeholder="姓名">
+<input type="text" id="age" placeholder="年龄">
+<input type="text" id="phone" placeholder="手机号">
+
+<script>
+    var nameElement = document.querySelector('#name');
+    nameElement.addEventListener('change', function () {
+        var name = nameElement.value;
+        if (!name) {
+            console.log('姓名为必填项');
+        } else if (
+            // 如何判断输入的是否为2-4位汉字且不带符号字母
+        ) {
+            console.log('请使用2到4位汉字');
+        } else {
+            console.log('YO.');
+        }
+    })
+
+    var ageEelement = document.querySelector('#age');
+    ageEelement.addEventListener('change', function () {
+        var age = ageEelement.value;
+        if (!age) {
+            console.log('年龄为必填项');
+        } else if (
+            !parseInt(age) || age < 1 //判断条件不齐全 
+        ) {
+            console.log('请输入正确格式');
+        } else {
+            console.log('Yo.');
+        }
+    })
+
+    var phoneElement = document.querySelector('#phone');
+    phoneElement.addEventListener('change', function () {
+        var phone = phoneElement.value;
+        if (!phone) {
+            console.log('号码为必填项');
+        } else if (
+            !phone.startsWith('1') || phone.length != 11 || !parseInt(phone)
+        ) {
+            console.log('请输入正确格式');
+        } else {
+            console.log('Yo.');
+        }
+    })
+</script>
