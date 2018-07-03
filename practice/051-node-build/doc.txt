@@ -1,0 +1,9 @@
+进入项目目录
+npm init -y
+npm i webpack webpack-cli -D
+配置package.json:
+  "scripts": {
+      "start": "./node_modules/.bin/webpack -wp"
+      ...
+  }
+npm start

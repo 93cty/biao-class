@@ -1,0 +1,111 @@
+<script src="./node_modules/axios/dist/axios.js"></script>
+<script>
+  /*创建模型*/
+
+  function sign (key, timestamp) {
+    return btoa(key + timestamp);
+  }
+
+  function send (url, method, data) {
+    let http = new XMLHttpRequest();
+    http.open(method, url);
+
+    http.setRequestHeader('Content-Type', 'application/json');
+
+    http.addEventListener('load', () => {
+      console.log('http.responseText:', http.responseText);
+    });
+
+    http.send(JSON.stringify(data));
+  }
+
+  let param = {
+    app_key   : 'dc0d71536b48e49c6b64cfc750aeb925e6b11296af2f538ecd4f224bfa1b91c7',
+    timestamp : (new Date).getTime(),
+
+    name      : "comment", // 模型名称
+    structure : [ // 模型结构
+      {
+        name     : "title", // 属性名称：标题
+        type     : "string", // 属性数据类型：字符串（最大长度255）
+        nullable : false, // 可否为空：不可为空
+      },
+      {
+        name     : "content",  // 属性名称：内容
+        type     : "text", // 属性数据类型：文本 （最大长度65535）
+        nullable : false, // 可否为空：不可为空
+      },
+      {
+        name     : "created_at", // 属性名称：创建时间
+        type     : "dateTime", // 属性数据类型：日期 （2020-10-01 12:30:10）
+        nullable : true,
+      },
+    ],
+  };
+
+  param.signature = sign(param.app_key, param.timestamp);
+
+  send('http://mock.biaoyansu.com/api/MODEL/CREATE', 'post', param);
+
+  // axios.post('http://mock.biaoyansu.com/api/MODEL/CREATE', param);
+
+</script>
+
+<script>
+  /*添加一条数据*/
+
+  param = {
+    app_key   : 'dc0d71536b48e49c6b64cfc750aeb925e6b11296af2f538ecd4f224bfa1b91c7',
+    timestamp : (new Date).getTime(),
+
+    title   : '我叫王花花4',
+    content : 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad, adipisci aut deserunt doloribus, eaque esse incidunt inventore modi necessitatibus quae quibusdam repellendus suscipit vero vitae voluptates. Cupiditate inventore iure nostrum.',
+  };
+
+  param.signature = sign(param.app_key, param.timestamp);
+
+  // axios.post('http://mock.biaoyansu.com/api/article/create', param);
+</script>
+
+<script>
+  /*查看一个模型中所有的数据*/
+
+  param = {
+    app_key   : 'dc0d71536b48e49c6b64cfc750aeb925e6b11296af2f538ecd4f224bfa1b91c7',
+    timestamp : (new Date).getTime(),
+  };
+
+  param.signature = sign(param.app_key, param.timestamp);
+
+  // axios.post('http://mock.biaoyansu.com/api/article/read', param);
+</script>
+
+<script>
+  /*删除一条数据*/
+
+  param = {
+    app_key   : 'dc0d71536b48e49c6b64cfc750aeb925e6b11296af2f538ecd4f224bfa1b91c7',
+    timestamp : (new Date).getTime(),
+
+    id : 1,
+  };
+
+  param.signature = sign(param.app_key, param.timestamp);
+
+  // axios.post('http://mock.biaoyansu.com/api/article/delete', param);
+</script>
+
+<script>
+  /*查看一条数据*/
+
+  param = {
+    app_key   : 'dc0d71536b48e49c6b64cfc750aeb925e6b11296af2f538ecd4f224bfa1b91c7',
+    timestamp : (new Date).getTime(),
+
+    id : 4,
+  };
+
+  param.signature = sign(param.app_key, param.timestamp);
+
+  // axios.post('http://mock.biaoyansu.com/api/article/find', param);
+</script>

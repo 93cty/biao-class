@@ -1,0 +1,65 @@
+<script>
+  /**
+   * 通过字符串获取子属性
+   * @param obj
+   * @param keys
+   * @return {mixed}
+   */
+  function obj_get (obj, keys) {
+    /*首先将对象拷贝一份（为了防止误修改）*/
+    let tmp = Object.assign({}, obj);
+
+    /*将键用点分割为数据*/
+    let arr = keys.split('.');
+
+    /*通过循环数组获取最终的值*/
+    arr.forEach(function (key) {
+      /*每次循环都会用下一层覆盖自己*/
+      tmp = tmp[ key ];
+    });
+
+    /*方法二
+    for (var i = 0; i < arr.length; i++) {
+      var key = arr[ i ];
+      tmp     = tmp[ key ];
+      if (tmp === null || typeof tmp !== 'object' || tmp.constructor === Array)
+        return tmp;
+    }*/
+
+    return tmp;
+  }
+
+  /**
+   * @param tpl 原始模板
+   * @param data 数据
+   * @return {string} 解析后的模板
+   */
+  function templator (tpl, data) {
+    let re     = /{{\s*([^}}\s]+)\s*}}/g,
+        result = tpl, // 首先拷一份模板，现在里面还有大把花括号
+        match;
+
+    /*只要还能找到匹配的花括号，就继续执行下去*/
+    while (match = re.exec(tpl)) {
+      let curly_block = match[ 0 ]; // "{{name}}"
+      let key         = match[ 1 ]; // "name"
+      let value       = obj_get(data, key); // "王花花"
+
+      /*用真实的值替换整个花括号，每次循环都会替换一个花括号*/
+      result = result.replace(curly_block, value);
+    }
+
+    return result;
+  }
+
+  let tpl  = `你好，我叫{{name}}，我今年{{age}}岁了，我娃叫{{child.name}}，他今年{{child.age}}`;
+  let data = {
+    name  : '王花花',
+    age   : 18,
+    child : { name : '李拴蛋', age : 54 },
+  };
+
+  let r = templator(tpl, data);
+  console.log(r);
+
+</script>

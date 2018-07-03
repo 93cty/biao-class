@@ -1,0 +1,12 @@
+<button id="yo">Yo.</button>
+<script>
+    var el = document.querySelector('#yo');
+
+    el.addEventListener('click', onclick)
+
+    el.removeEventListener('click', onclick)
+
+    function onclick() {
+        console.log(1);
+    };
+</script>

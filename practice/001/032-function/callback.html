@@ -1,0 +1,15 @@
+<script>
+    function make_meal(attatch) {
+        console.log('买菜');
+        if (attatch) {
+            attatch();
+        }
+        console.log('洗菜');
+        console.log('炒菜');
+    }
+    function buy_pen() {
+        console.log('捎支笔');
+    }
+
+    make_meal(buy_pen);
+</script>

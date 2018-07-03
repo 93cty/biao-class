@@ -1,0 +1,19 @@
+<div>a</div>
+<div>b</div>
+
+<script src="./node_modules/jquery/dist/jquery.js"></script>
+<script>
+  var el = document.querySelector('div');
+  var $el = $('div');
+  var el_list = document.querySelectorAll('div');
+
+  $el
+    .css({
+      color: 'deeppink'
+    })
+    .animate({
+      'font-size': 50,
+      'margin-top': 30
+    });
+  ;
+</script>

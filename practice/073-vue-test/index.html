@@ -1,0 +1,38 @@
+<div id="root">
+    <!--<h1 v-if="show">Yo</h1>-->
+    <input type="text" v-model="name">
+    <input type="text" v-model="child.child.name">
+    <div v-for="(key,value) in person">{{key}}-{{value}}</div>
+</div>
+
+<script src="https://cdn.bootcss.com/vue/2.5.16/vue.js"></script>
+<script>
+    window.root = new Vue({
+        el: '#root',
+        data: {
+            // show : false,
+            name: 'whh',
+            child: {
+                name: 'lsd',
+                child: {
+                    name: 'zks',
+                },
+            },
+            person: {
+                name: 'whh',
+                age: 18,
+            },
+        },
+        // watch: {
+        //     name: function (n, o) {
+        //         localStorage.setItem('name', n);
+        //     },
+        //     child: {
+        //         deep: true,
+        //         handler: function (n) {
+        //             console.log('n:', n.child.name);
+        //         },
+        //     },
+        // },
+    });
+</script>

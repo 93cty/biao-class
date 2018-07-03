@@ -1,0 +1,66 @@
+<script>
+  // var arr = [1, 2, 3, 4, 5];
+
+  /**
+   * 遍历数组
+   * 每次遍历都执行传进来的each_do
+   * */
+    // function each(list, each_do) {
+    //   for (var i = 0; i < list.length; i++) {
+    //     var item = list[i]; // 取到正在遍历的元素
+    //     each_do(item); // 喂给传进来的函数
+    //   }
+    // }
+
+    // each(arr, function (item) {
+    //   console.log(item)
+    // });
+
+    // each(arr, function (item) {
+    //   if (!(item % 2))
+    //     console.log(item);
+    // });
+
+    // each(arr, function (item) {
+    //   console.log(item * 2);
+    // });
+    //
+    // each(arr, function (item) {
+    //   console.log(item + ', 你好啊');
+    // });
+
+    // function buy(on_enter, on_leave) {
+    //   console.log('出门');
+    //   console.log('进超市');
+    //   if (on_enter)
+    //     on_enter();
+    //   console.log('出超市');
+    //   if (on_leave)
+    //     on_leave();
+    //   console.log('打车回家');
+    // }
+    //
+    // buy(function () {
+    //   console.log('打2个收银员');
+    // }, function () {
+    //   console.log('把收银员背上');
+    // });
+
+  var ticket = 0;
+
+  function buy_ticket(on_soldout) {
+    console.log('去车站');
+    console.log('进站');
+    console.log('买票');
+    if (!ticket) {
+      console.log('没票了');
+      on_soldout();
+    }
+    console.log('出站');
+  }
+
+  buy_ticket(function () {
+    console.log('找黄牛');
+  });
+
+</script>

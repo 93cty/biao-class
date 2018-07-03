@@ -1,0 +1,19 @@
+<div id="x">
+  <button>1</button>
+  <button>2</button>
+  <button>3</button>
+</div>
+
+<script>
+  x.addEventListener('click', function () {
+    console.log(1);
+    make_btn();
+  });
+
+  function make_btn() {
+    x.innerHTML = '';
+    for (var i = 0; i < 5; i++) {
+      x.appendChild(document.createElement('button'));
+    }
+  }
+</script>
