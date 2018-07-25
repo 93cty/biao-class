@@ -5,8 +5,8 @@
 }
 
 body {
-  background: #fff;
-  background-image: url(../img/bg.png);
+  background: #535a8a;
+  background-image: url(../img/bg-purple.png);
   -webkit-background-size: 10%;
   background-size: 10%;
 }
@@ -107,11 +107,6 @@ fieldset {
 
 .bg-white {
   background: #fff;
-}
-
-.tel {
-  font-weight: bold;
-  color: #ffbe00;
 }
 
 .col-lg-1 {
@@ -293,10 +288,11 @@ input {
 .btn-primary {
   padding-left: 15px;
   padding-right: 15px;
-  background: #ffbe00;
+  background-color: #ffbe00;
   color: #fff;
   background-image: url(../img/btn-bg.png);
   -webkit-background-size: 100%;background-size: 100%;
+  text-shadow: 0 0 1px rgba(0, 0, 0, .4);
 }
 
 /*body, .btn-primary {*/
@@ -361,7 +357,7 @@ input {
 }
 
 .nav {
-  background: rgba(255, 255, 255, .3);
+  background: rgba(63, 74, 151, 0.5);
   margin: 20px 0;
   padding-left: 10px;
   padding-right: 10px;
@@ -392,7 +388,7 @@ input {
 }
 
 /*.round {*/
-  /*-webkit-box-shadow: 0 0 5px #ffbe00;-moz-box-shadow: 0 0 5px #ffbe00;box-shadow: 0 0 5px #ffbe00;*/
+/*-webkit-box-shadow: 0 0 5px #ffbe00;-moz-box-shadow: 0 0 5px #ffbe00;box-shadow: 0 0 5px #ffbe00;*/
 /*}*/
 
 .cat-promo {
