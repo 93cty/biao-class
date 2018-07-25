@@ -1,15 +1,21 @@
-import Vue from 'vue'
-import App from './App.vue'
-import Router from 'vue-router'
+import './css/global.css';
 
-Vue.config.productionTip = false
+import Vue from 'vue';
+import Router from 'vue-router';
+
+import App from './App.vue';
+import Home from './page/Home';
+import Detail from './page/Detail';
+import Search from './page/Search';
+
+Vue.config.productionTip = false;
 Vue.use(Router);
 
 const router = new Router({
   routes: [
     { path: '/', component: Home },
     { path: '/detail', component: Detail },
-    { path: '/searc', component: Search },
+    { path: '/search', component: Search },
   ],
 });
 

@@ -5,7 +5,7 @@
 }
 
 body {
-  background: #535a8a;
+  background: #fff;
   background-image: url(../img/bg-purple.png);
   -webkit-background-size: 10%;
   background-size: 10%;
@@ -357,7 +357,7 @@ input {
 }
 
 .nav {
-  background: rgba(63, 74, 151, 0.5);
+  background: rgba(151, 63, 63, 0.86);
   margin: 20px 0;
   padding-left: 10px;
   padding-right: 10px;

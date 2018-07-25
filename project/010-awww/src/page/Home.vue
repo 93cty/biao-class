@@ -1,5 +1,6 @@
 <template>
   <div>
+
     <Nav/>
     <div class="container">
       <router-link to="/detail" class="slider">
@@ -225,15 +226,11 @@
     </div>
   </div>
 </template>
-
 <script>
-import Nav from "../compents/Nav";
+import Nav from "../components/Nav";
+
 export default {
-  components: {
-    Nav
-  }
+  components: { Nav }
 };
 </script>
-
-<style scoped>
-</style>
+<style scoped></style>

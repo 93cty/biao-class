@@ -98,91 +98,86 @@
     </div>
   </div>
 </template>
-
 <script>
-import Nav from "../comeonets/Nav";
-export default {
-  compents: { nav }
-};
+  import Nav from '../components/Nav';
+
+  export default {
+    components : { Nav },
+  };
 </script>
-
 <style scoped>
-h1 {
-  font-size: 60px;
-  font-weight: 900;
-}
+  h1 {
+    font-size: 60px;
+    font-weight: 900;
+  }
 
-.slider:hover .mask,
-.slider:hover .info {
-  opacity: 1;
-}
+  .slider:hover .mask,
+  .slider:hover .info {
+    opacity: 1;
+  }
 
-.mask {
-  opacity: 0;
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: rgba(0, 0, 0, 0.3);
-  margin-left: 5px;
-  margin-right: 5px;
-}
+  .mask {
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, .3);
+    margin-left: 5px;
+    margin-right: 5px;
+  }
 
-.info {
-  opacity: 0;
-  padding: 30px;
-  position: absolute;
-  top: 0;
-  left: 0;
-  color: #fff;
-  width: 50%;
-  line-height: 2rem;
-  font-size: 1.1rem;
-}
+  .info {
+    opacity: 0;
+    padding: 30px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: #fff;
+    width: 50%;
+    line-height: 2rem;
+    font-size: 1.1rem;
+  }
 
-.mask,
-.info {
-  -webkit-transition: opacity 0.2s;
-  -moz-transition: opacity 0.2s;
-  -ms-transition: opacity 0.2s;
-  -o-transition: opacity 0.2s;
-  transition: opacity 0.2s;
-}
+  .mask, .info {
+    -webkit-transition: opacity .2s;
+    -moz-transition: opacity .2s;
+    -ms-transition: opacity .2s;
+    -o-transition: opacity .2s;transition: opacity .2s;
+  }
 
-.prop > *:first-child {
-  opacity: 0.7;
-  margin-right: 10px;
-}
+  .prop > *:first-child {
+    opacity: .7;
+    margin-right: 10px;
+  }
 
-.prop > *:nth-child(2) {
-}
+  .prop > *:nth-child(2) {
+  }
 
-.buy {
-  position: absolute;
-  bottom: 40px;
-  right: 60px;
-  padding-left: 50px;
-  padding-right: 50px;
-}
+  .buy {
+    position: absolute;
+    bottom: 40px;
+    right: 60px;
+  }
 
-.detail {
-  border: 5px solid #ffbe00;
-}
+  .detail {
+    border: 5px solid #ffbe00;
+  }
 
-.detail .other-info {
-  border-bottom: 5px solid #ffbe00;
-}
+  .detail .other-info {
+    border-bottom: 5px solid #ffbe00;
+  }
 
-.detail .other-info > * {
-  padding: 10px;
-  color: #ffbe00;
-  font-size: 1.2rem;
-  font-weight: bold;
-}
+  .detail .other-info > * {
+    padding: 10px;
+    color: #ffbe00;
+    font-size: 1.2rem;
+    font-weight: bold;
+  }
 
-.detail .content {
-  padding: 10px;
-  background: #fff;
-}
+  .detail .content {
+    padding: 10px;
+    background: #fff;
+  }
 </style>

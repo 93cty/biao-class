@@ -44,31 +44,29 @@
     </div>
   </div>
 </template>
-
 <script>
-import Nav from "../components/Nav";
-export default {
-  components: { Nav }
-};
+  import Nav from '../components/Nav';
+
+  export default {
+    components : { Nav },
+  };
 </script>
-
 <style scoped>
-.filter {
-  background: #ffbe00;
-  color: #fffbf2;
-}
+  .filter {
+    background: #ffbe00;
+    color: #fffbf2;
+  }
 
-.filter-item {
-  font-size: 1.4rem;
-  font-weight: 300;
-  cursor: pointer;
-  padding: 15px 10px;
-  text-align: center;
-}
+  .filter-item {
+    font-size: 1.4rem;
+    font-weight: 300;
+    cursor: pointer;
+    padding: 15px 10px;
+    text-align: center;
+  }
 
-.filter-item:hover {
-  background: rgba(0, 0, 0, 0.2);
-  color: #fff;
-}
+  .filter-item:hover {
+    background: rgba(0, 0, 0, .2);
+    color: #fff;
+  }
 </style>
-
